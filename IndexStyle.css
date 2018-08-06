@@ -1,0 +1,143 @@
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+.switchh {
+  position: relative;
+  display: inline-block;
+  width: 180px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.sliderr {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .3s;
+  border-radius: 20px;
+  border: 2px solid;
+  border-color: #dadada;
+}
+.sliderrr {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .3s;
+  border-radius: 20px;
+  border: 2px solid;
+  border-color: #dadada;
+}
+
+.sliderr:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: 0.2s;
+  border-radius: 50px;
+  box-shadow: 0px 1.5px 1.5px #888888;
+}
+.sliderrr:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 78px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: 0.2s;
+  border-radius: 50px;
+  box-shadow: 0px 1.5px 1.5px #888888;
+}
+
+input:checked + .sliderr, input:checked + .sliderrr {
+  background-color: #04d000;
+}
+
+input:focus + .sliderr, input:focus + .sliderrr {
+  box-shadow: 0 0 1px #04d000;
+}
+
+input:checked + .sliderr:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+input:checked + .sliderrr:before {
+  -webkit-transform: translateX(93px);
+  -ms-transform: translateX(93px);
+  transform: translateX(93px);
+}
+
+.btn {
+  width: 100%;
+}
+
+label {
+  display: block;
+}
+
+body {
+  background-color: #008c00;
+  vertical-align: middle;
+  padding-top: 150px;
+}
+
+.container {
+  background-color: White;
+  border-radius: 10px;
+  padding-top: 15px;
+  padding-bottom: 0.5px;
+}
+
+#logo {
+  width: 20%;
+  height: 20%;
+  padding-bottom: 15px;
+}
+
+.btn {
+  background-color: #218838;
+}
+.btn:hover {
+  background-color: #318c16;
+}
+
+label, .input-field label {
+  color: #636363;
+}
+
+.close {
+  color: White;
+ }
+.close:hover {
+  color: #6c757d;
+  text-shadow: 0 1px 0 #6c757d;
+}
+
+.alert-danger {
+  background-color: #dc3545;
+  color: White;
+}

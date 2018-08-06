@@ -1,0 +1,176 @@
+<html>
+
+<head>
+  <title>Pit Scouting</title>
+  <script type="text/javascript" src="./Resources/jquery/jquery-3.3.1.min.js"></script>
+  <link rel="stylesheet" href="./Resources/Bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="./Resources/materialize/css/materialize.min.css">
+  <link rel="stylesheet" href="./IndexStyle.css">
+  <script type="text/javascript" src="./Resources/Bootstrap/js/bootstrap.js"></script>
+  <script type="text/javascript" src="./Resources/materialize/js/materialize.min.js"></script>
+  <script type="text/javascript" src="index.js"></script>
+  <link rel="icon" href="./Resources/logo.png">
+</head>
+
+<body onload="Check('cube_mech'); settup();">
+  <center>
+    <div class="container">
+      <div id="errormsg" class="collapse">
+        <div class="alert alert-danger">
+          <strong>Error: </strong>One or more fields are empty!!
+          <button id="closeerror" class="close" onclick="HideAlert(this)">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      </div>
+    <img src="./Resources/logo.png" alt="#" id="logo">
+      <form id="form" action="indexPage.php" method="post" onsubmit="return CheckStupidity()">
+        <div class="row">
+          <div class="col s1">
+            <label id="team_selectlabel" for="team_num">Team Number</label>
+            <select id="team_num" class="custom-select" name="team_num">
+              <option>-- Please Select --</option>
+            </select>
+          </div>
+          <div class="col s1">
+            <label id="scouter_selectlabel" for="scouter_name">Scouter Name</label>
+            <select id="scouter_name" class="custom-select" name="scouter_name">
+              <option>-- Please Select --</option>
+            </select>
+          </div>
+          <div class="col s1">
+            <label id="robot_typelabel" for="robot_type">Robot Type</label>
+            <select id="robot_type" class="custom-select" name="robot_type">
+              <option>-- Please Select --</option>
+              <option>Offensive</option>
+              <option>Defensive</option>
+              <option>Both</option>
+            </select>
+          </div>
+          <div class="col s1">
+            <label id="programming_langlabel" for="programming_lang">Programming Language</label>
+            <select id="programming_lang" class="custom-select" name="programming_lang">
+              <option>-- Please Select --</option>
+              <option>Java</option>
+              <option>Labview</option>
+              <option>Python</option>
+              <option>C++</option>
+            </select>
+          </div>
+          <div class="col s1">
+            <label id="auton_label" for="auton">Autonomous</label>
+            <select id="auton" class="custom-select" name="auton">
+              <option>-- Please Select --</option>
+              <option>None/Not Working</option>
+              <option>Crosses Line</option>
+              <option>Scores (guess)</option>
+              <option>Scores (reads game data)</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s1">
+            <div class="input-field">
+              <input id="wheels" type="text" class="" name="num_wheels">
+              <label id="wheelslabel" for="num_wheels" data-error="Required!">Wheel Count</label>
+            </div>
+          </div>
+          <div class="col s1">
+            <div class="input-field">
+              <input id="weight" type="text" class="" name="weight">
+              <label id="weightlabel" for="weight" data-error="Required!">Weight (lbs)</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col s1">
+            <div class="input-field">
+              <input id="length" type="text" class="" name="length">
+              <label id="lengthlabel" for="length" data-error="Required!">Length (in)</label>
+            </div>
+          </div>
+          <div class="col s1">
+            <div class="input-field">
+              <input id="width" type="text" class="" name="width">
+              <label id="widthlabel" for="width" data-error="Required!">Width (in)</label>
+            </div>
+          </div>
+          <div class="col s1">
+            <div class="input-field">
+              <input id="height" type="text" class="" name="height">
+              <label id="heightlabel" for="height" data-error="Required!">Height (in)</label>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="col s1">
+            <label class="" for="cube_mech">Cube Mech</label>
+            <label class="switchh">
+              <input type="checkbox" id="cube_mech" name="cube_mech" onclick="Check('cube_mech')">
+              <span class="sliderrr"></span>
+            </label>
+          </div>
+          <div class="col s1">
+            <label class="" for="climb_mech">Climb Mech</label>
+            <label class="switchh">
+              <input type="checkbox" id="climb_mech" name="climb_mech">
+              <span class="sliderrr"></span>
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="collapse col s6" id="cube_mech_options">
+            <div class="col s1">
+              <label class="switch">
+                <input type="checkbox" id="cube_mech_push" name="cube_mech_push" disabled="true">
+                <span class="sliderr"></span>
+              </label>
+              <label class="" for="cube_mech_push">Push</label>
+            </div>
+
+            <div class="col s1 offset-s1">
+              <label class="switch">
+                <input type="checkbox" id="cube_mech_carry" name="cube_mech_carry" disabled="true">
+                <span class="sliderr"></span>
+              </label>
+              <label class="" for="cube_mech_carry">Carry</label>
+            </div>
+
+            <div class="col s1 offset-s1">
+              <label class="switch">
+                <input type="checkbox" id="cube_mech_place" name="cube_mech_place" disabled="true">
+                <span class="sliderr"></span>
+              </label>
+              <label class="" for="cube_mech_place">Place</label>
+            </div>
+
+            <div class="col s1 offset-s1">
+              <label class="switch">
+                <input type="checkbox" id="cube_mech_shoot" name="cube_mech_shoot" disabled="true">
+                <span class="sliderr"></span>
+              </label>
+              <label class="" for="cube_mech_shoot">Shoot</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+
+        </div>
+
+        <div class="row">
+          <div class="col s3">
+            <button type="submit" class="btn btn-success">Next</button>
+          </div>
+        </div>
+      </form>
+</div>
+</center>
+
+
+</body>
+
+</html>

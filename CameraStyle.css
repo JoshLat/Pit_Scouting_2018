@@ -1,0 +1,73 @@
+.colors {
+  --blue: #007bff;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #dc3545;
+  --orange: #fd7e14;
+  --yellow: #ffc107;
+  --green: #28a745;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #6c757d;
+  --gray-dark: #343a40;
+  --primary: #007bff;
+  --secondary: #6c757d;
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #f8f9fa;
+  --dark: #343a40;
+}
+
+
+.container {
+  padding-top: 15px;
+}
+
+#takeapic, #savesuccess {
+  z-index: 999;
+  horizontal-align: center;
+}
+.close {
+  color: White;
+ }
+.close:hover {
+  color: #6c757d;
+  text-shadow: 0 1px 0 #6c757d;
+}
+
+.alert-danger {
+  background-color: #dc3545;
+  color: White;
+}
+
+.alert-success {
+  background-color: #28a745;
+  color: White;
+}
+
+#capture, #retake, #save, #back, #finish{
+  width: 100%;
+}
+#pageoptions {
+  padding-top: 10px;
+}
+
+#cardbody, .card {
+  background-color: White;
+  border-radius: 10px;
+}
+
+.card-img-top {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+}
+
+body {
+  background-color: #008c00;
+  vertical-align: middle;
+}
